@@ -1,4 +1,101 @@
-# 💤 LazyVim
+# NeoVim 从入门到放弃
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+## 安装
+
+先安装 `neovim`
+
+```shell
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+sudo ln -s $(pwd)/nvim.appimage /usr/bin/nvim
+```
+
+首先备份一下原有的配置文件
+
+```shell
+# required
+mv ~/.config/nvim{,.bak}
+
+# optional but recommended
+mv ~/.local/share/nvim{,.bak}
+mv ~/.local/state/nvim{,.bak}
+mv ~/.cache/nvim{,.bak}
+```
+
+然后下载 `starter template`
+
+```shell
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+```
+
+## 配置
+
+输入 `:LazyExtras` 勾选以下扩展（按x可以勾选）:
+
+- lang.clangd
+- lang.cmake
+- lang.markdown
+- lang.python
+- lang.rust
+- coding.copilot
+
+这里可能需要安装一些额外的东西：
+
+```shell
+sudo apt install clangd cmake
+npm install -g markdownlint-cli
+# lazygit
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
+```
+
+## 概念
+
+- lazyvim 中每个打开的文件都是一个buffer
+
+## 快捷键
+
+建议看一下[tips](https://www.lazyvim.org/configuration/tips)
+
+### 好用的默认快捷键
+
+以下每个给出的快捷键都是按照常用程度从高到低进行排列
+
+[所有的默认快捷键配置](https://www.lazyvim.org/keymaps)
+
+#### 查找
+
+|key|desc|
+|---|---|
+|`<leader><space>`|全局查找文件|
+|`<leader>/`|全局搜索文件内容|
+|`<leader>sh`|搜索help|
+
+#### 切换
+
+|key|desc|
+|---|---|
+|`<leader>,`|在打开的buffer中切换|
+|`<leader>` + \`|切换到上一个buffer|
+|`<leader>qq`|退出当前会话|
+|`<leader>ql`|恢复上次会话|
+|`<leader>bo`|删除除了当前buffer外的所有buffer|
+
+#### 终端
+
+|key|desc|
+|---|---|
+|`<C-/>`|toggle 终端|
+
+#### 编码
+
+|key|desc|
+|---|---|
+|`gc`|注释|
+
+### 自己配置的快捷键
+
+在 `lua/config/keymaps.lua` 中配置自定义快捷键，可以参考此仓库的配置
