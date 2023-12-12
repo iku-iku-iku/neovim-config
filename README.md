@@ -62,33 +62,48 @@ sudo install lazygit /usr/local/bin
 
 ### 好用的默认快捷键
 
-以下每个给出的快捷键都是按照常用程度从高到低进行排列
+- 以下每个给出的快捷键都是按照常用程度从高到低进行排列
+- 使用感叹号来强调重要程度，越多感叹号越常用
 
 [所有的默认快捷键配置](https://www.lazyvim.org/keymaps)
 
-#### 查找
+#### 工作流
+
+基本工作流
 
 |key|desc|
 |---|---|
-|`<leader><space>`|全局查找文件|
-|`<leader>/`|全局搜索文件内容|
-|`<leader>sh`|搜索help|
-
-#### 切换
-
-|key|desc|
-|---|---|
-|`<leader>,`|在打开的buffer中切换|
+|`<leader><space>`|全局查找文件!!!!|
+|`<leader>/`|全局搜索文件内容!!!!|
+|`<leader>,`|在打开的buffer中切换!!!!|
+|`<C-/>`|toggle 终端!!!|
 |`<leader>` + \`|切换到上一个buffer|
+
+全局工作流
+
+|key|desc|
+|---|---|
 |`<leader>qq`|退出当前会话|
 |`<leader>ql`|恢复上次会话|
-|`<leader>bo`|删除除了当前buffer外的所有buffer|
 
-#### 终端
+buffer 工作流
 
 |key|desc|
 |---|---|
-|`<C-/>`|toggle 终端|
+|`<leader>bo`|删除除了当前buffer外的所有buffer|
+|`<leader>bd`|删除当前buffer|
+|`<leader>sh`|搜索help|
+
+window 工作流
+
+|key|desc|
+|---|---|
+|`<leader>` + '-'|水平分割窗口|
+|`<leader>` + '|'|垂直分割窗口|
+|`<leader>wd`|删除当前窗口|
+|`C-hjkl`|在窗口间切换，方向就是hjkl对应的方向|
+|`<leader>e`|toggle 文件树|
+|`<leader>be`|toggle 打开的文件组成的文件树|
 
 #### 编码
 
