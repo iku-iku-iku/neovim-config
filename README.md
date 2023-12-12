@@ -69,7 +69,7 @@ sudo install lazygit /usr/local/bin
 
 #### 工作流
 
-基本工作流
+##### 基本工作流
 
 |key|desc|
 |---|---|
@@ -79,14 +79,14 @@ sudo install lazygit /usr/local/bin
 |`<C-/>`|toggle 终端!!!|
 |`<leader>` + \`|切换到上一个buffer|
 
-全局工作流
+##### 全局工作流
 
 |key|desc|
 |---|---|
 |`<leader>qq`|退出当前会话|
 |`<leader>ql`|恢复上次会话|
 
-buffer 工作流
+##### buffer 工作流
 
 |key|desc|
 |---|---|
@@ -94,7 +94,7 @@ buffer 工作流
 |`<leader>bd`|删除当前buffer|
 |`<leader>sh`|搜索help|
 
-window 工作流
+##### window 工作流
 
 |key|desc|
 |---|---|
@@ -104,6 +104,20 @@ window 工作流
 |`C-hjkl`|在窗口间切换，方向就是hjkl对应的方向|
 |`<leader>e`|toggle 文件树|
 |`<leader>be`|toggle 打开的文件组成的文件树|
+
+##### git 工作流
+
+|key|desc|
+|---|---|
+|`<leader>gg`|打开lazygit(打开后按?可以查看用法)|
+
+基本用法：
+
+- a：git add .
+- c: git commit -m
+- p: git pull
+- P: git push
+- q: quit
 
 #### 编码
 
