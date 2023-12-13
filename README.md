@@ -128,3 +128,11 @@ sudo install lazygit /usr/local/bin
 ### 自己配置的快捷键
 
 在 `lua/config/keymaps.lua` 中配置自定义快捷键，可以参考此仓库的配置
+
+## 更酷炫一些
+
+```shell
+wget https://github.com/neovide/neovide/releases/latest/download/neovide.AppImage
+chmod u+x neovide.AppImage
+sudo mv neoivde.AppImage /usr/bin/neovide
+```
