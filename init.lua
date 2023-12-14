@@ -11,3 +11,9 @@ if vim.g.neovide then
   vim.g.neovide_input_ime = true
   vim.g.neovide_cursor_vfx_mode = "wireframe"
 end
+
+-- vim.cmd("colorscheme tokyonight-storm") -- for storm themes
+-- vim.cmd("colorscheme tokyonight-day") -- for day theme
+-- vim.cmd("colorscheme tokyonight-moon") -- for moon theme
+-- vim.cmd("colorscheme tokyonight-night") -- for night themes
+require("onedark").load()

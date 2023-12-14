@@ -9,6 +9,8 @@ local Util = require("lazyvim.util")
 local map = Util.safe_keymap_set
 -- quit file
 map({ "i", "x", "n", "s" }, "<C-q>", "<cmd>q<cr><esc>", { desc = "Quit file" })
+-- end the line with ';'
+map({ "i" }, "<C-e>", "<C-o>A;<esc>", { desc = "End line with ';'" })
 for i = 1, 9 do
   map({ "n" }, "g" .. i, "<cmd>BufferLineGoToBuffer " .. i .. "<cr><esc>", { desc = "goto buffer " .. i })
 end

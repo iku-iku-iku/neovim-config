@@ -31,15 +31,6 @@ rm -rf ~/.config/nvim/.git
 
 ## 配置
 
-输入 `:LazyExtras` 勾选以下扩展（按x可以勾选）:
-
-- lang.clangd
-- lang.cmake
-- lang.markdown
-- lang.python
-- lang.rust
-- coding.copilot
-
 这里可能需要安装一些额外的东西：
 
 ```shell
@@ -71,45 +62,46 @@ sudo install lazygit /usr/local/bin
 
 ##### 基本工作流
 
-|key|desc|
-|---|---|
-|`<leader><space>`|全局查找文件!!!!|
-|`<leader>/`|全局搜索文件内容!!!!|
-|`<leader>,`|在打开的buffer中切换!!!!|
-|`<C-/>`|toggle 终端!!!|
-|`<leader>` + \`|切换到上一个buffer|
+| key               | desc                     |
+| ----------------- | ------------------------ |
+| `<leader><space>` | 全局查找文件!!!!         |
+| `<leader>/`       | 全局搜索文件内容!!!!     |
+| `<leader>,`       | 在打开的buffer中切换!!!! |
+| `<C-S-_>`         | toggle 终端!!!           |
+| `<leader>` + \`   | 切换到上一个buffer       |
 
 ##### 全局工作流
 
-|key|desc|
-|---|---|
-|`<leader>qq`|退出当前会话|
-|`<leader>ql`|恢复上次会话|
+| key          | desc         |
+| ------------ | ------------ |
+| `<leader>qq` | 退出当前会话 |
+| `<leader>ql` | 恢复上次会话 |
 
 ##### buffer 工作流
 
-|key|desc|
-|---|---|
-|`<leader>bo`|删除除了当前buffer外的所有buffer|
-|`<leader>bd`|删除当前buffer|
-|`<leader>sh`|搜索help|
+| key          | desc                             |
+| ------------ | -------------------------------- |
+| `<leader>bp` | pin住当前窗口!!                  |
+| `<leader>bP` | 关闭没有pin住的窗口!!            |
+| `<leader>bo` | 删除除了当前buffer外的所有buffer |
+| `<leader>bd` | 删除当前buffer                   |
 
 ##### window 工作流
 
-|key|desc|
-|---|---|
-|`<leader>` + '-'|水平分割窗口|
-|`<leader>` + '|'|垂直分割窗口|
-|`<leader>wd`|删除当前窗口|
-|`C-hjkl`|在窗口间切换，方向就是hjkl对应的方向|
-|`<leader>e`|toggle 文件树|
-|`<leader>be`|toggle 打开的文件组成的文件树|
+| key              | desc                                 |
+| ---------------- | ------------------------------------ | ------------ |
+| `<leader>` + '-' | 水平分割窗口                         |
+| `<leader>` + '   | '                                    | 垂直分割窗口 |
+| `<leader>wd`     | 删除当前窗口                         |
+| `C-hjkl`         | 在窗口间切换，方向就是hjkl对应的方向 |
+| `<leader>e`      | toggle 文件树                        |
+| `<leader>be`     | toggle 打开的文件组成的文件树        |
 
 ##### git 工作流
 
-|key|desc|
-|---|---|
-|`<leader>gg`|打开lazygit(打开后按?可以查看用法)|
+| key          | desc                               |
+| ------------ | ---------------------------------- |
+| `<leader>gg` | 打开lazygit(打开后按?可以查看用法) |
 
 基本用法：
 
@@ -121,15 +113,25 @@ sudo install lazygit /usr/local/bin
 
 #### 编码
 
-|key|desc|
-|---|---|
-|`gc`|注释|
+| key  | desc                                     |
+| ---- | ---------------------------------------- |
+| `gc` | 注释                                     |
+| `gs` | surrounding相关，具体用法which-key会给出 |
+
+#### 其他好用的快捷键
+
+| key          | desc           |
+| ------------ | -------------- |
+| `<leader>sk` | 搜索keymaps!!! |
+| `<leader>sh` | 搜索help       |
 
 ### 自己配置的快捷键
 
 在 `lua/config/keymaps.lua` 中配置自定义快捷键，可以参考此仓库的配置
 
 ## 更酷炫一些
+
+neovide 目前还有一些bug，大多数时候用nvim，但是neovide真的酷炫啊！
 
 ```shell
 wget https://github.com/neovide/neovide/releases/latest/download/neovide.AppImage
