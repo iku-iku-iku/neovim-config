@@ -67,8 +67,13 @@ sudo install lazygit /usr/local/bin
 | `<leader><space>` | 全局查找文件!!!!         |
 | `<leader>/`       | 全局搜索文件内容!!!!     |
 | `<leader>,`       | 在打开的buffer中切换!!!! |
-| `<C-S-_>`         | toggle 终端!!!           |
+| `<C-\>`           | toggle 终端!!!           |
+| `n<C-\>`          | 打开第n个终端!!!         |
 | `<leader>` + \`   | 切换到上一个buffer       |
+
+> terminal 中的快捷键
+> `<esc>`: 从 terminal 模式进入 termial 模式
+> `i`: 从 normal 模式进入 terminal 模式
 
 ##### 全局工作流
 
