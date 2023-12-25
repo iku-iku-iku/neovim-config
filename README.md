@@ -116,6 +116,14 @@ sudo install lazygit /usr/local/bin
 - P: git push
 - q: quit
 
+#### debug
+
+| key          | desc       |
+| ------------ | ---------- |
+| `<leader>du` | 打开调试UI |
+| `<leader>db` | 打断点     |
+| `<leader>da` | 运行       |
+
 #### 编码
 
 | key  | desc                                     |
