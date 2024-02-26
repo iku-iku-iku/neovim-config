@@ -17,6 +17,26 @@ end
 
 map({ "n" }, "<C-q>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", { desc = "harpoon ui" })
 map({ "n" }, "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>", { desc = "harpoon add current file" })
+vim.api.nvim_set_keymap(
+  "n",
+  "<C-w>",
+  "<cmd>lua require('telescope.builtin').live_grep({ default_text = vim.fn.expand('<cword>') })<CR>",
+  { noremap = true, silent = true, desc = "Live Grep Current Word" }
+)
+
+-- 定义一个Lua函数来实现live_grep当前光标下的单词
+-- local grep_current_word = function()
+--   local word = vim.fn.expand("<cword>") -- 获取当前光标下的单词
+--   require("telescope.builtin").live_grep({ default_text = word }) -- 使用Telescope的live_grep来搜索这个单词
+-- end
+--
+-- -- 将这个函数绑定到快捷键<C-q>上，在普通模式下使用
+-- vim.api.nvim_set_keymap(
+--   "n",
+--   "<C-w>",
+--   "<cmd>lua grep_current_word()<CR>",
+--   { noremap = true, silent = true, desc = "Live Grep Current Word" }
+-- )
 
 vim.keymap.set(
   "n",
