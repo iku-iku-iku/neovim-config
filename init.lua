@@ -57,3 +57,10 @@ require("harpoon").setup({
     width = vim.api.nvim_win_get_width(0) - 4,
   },
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "cpp",
+  callback = function()
+    vim.bo.commentstring = "// %s"
+  end,
+})
