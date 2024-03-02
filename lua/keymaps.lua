@@ -28,4 +28,28 @@ map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 map("n", "<leader>`", ":b#<CR>", opts)
 
 -- code
+function MOVE_SCREEN_UP()
+	for _ = 1, 10 do
+		vim.api.nvim_input("k<C-y>")
+	end
+end
+
+function MOVE_SCREEN_DOWN()
+	for _ = 1, 10 do
+		vim.api.nvim_input("j<C-e>")
+	end
+end
+
 map("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
+map("n", "<Up>", "k<C-y>", opts)
+map("n", "<Down>", "j<C-e>", opts)
+map("n", "<Left>", "<cmd>lua MOVE_SCREEN_UP()<CR>", { silent = true })
+
+map("n", "<Right>", "<cmd>lua MOVE_SCREEN_DOWN()<CR>", { silent = true })
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<C-w>",
+  "<cmd>lua require('telescope.builtin').live_grep({ default_text = vim.fn.expand('<cword>') })<CR>",
+  { noremap = true, silent = true, desc = "Live Grep Current Word" }
+)

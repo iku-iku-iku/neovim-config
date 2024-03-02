@@ -12,9 +12,12 @@ return {
 			{ "j-hui/fidget.nvim", opts = {} },
 		},
 		config = function()
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.offsetEncoding = { "utf-16" }
 			require("lspconfig").clangd.setup({
 				cmd = { "clangd", "--background-index" },
 				filetypes = { "c", "cpp", "objc", "objcpp" },
+				capabilities = capabilities,
 				-- 其他你想要的配置
 			})
 
@@ -91,7 +94,7 @@ return {
 
 					-- Rename the variable under your cursor
 					--  Most Language Servers support renaming across files, etc.
-					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+					map("<leader>cr", vim.lsp.buf.rename, "[R]e[n]ame")
 
 					-- Execute a code action, usually your cursor needs to be on top of an error
 					-- or a suggestion from your LSP for this to activate.
