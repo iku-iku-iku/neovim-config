@@ -55,5 +55,20 @@ function _G.set_terminal_keymaps()
   vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
 end
 
+function MOVE_SCREEN_UP()
+  for _ = 1, 10 do
+    vim.api.nvim_input("k<C-y>")
+  end
+end
+
+function MOVE_SCREEN_DOWN()
+  for _ = 1, 10 do
+    vim.api.nvim_input("j<C-e>")
+  end
+end
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
+map("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
+map("n", "<Up>", "k<C-y>", opts)
+map("n", "<Down>", "j<C-e>", opts)
+map("n", "<Left>", "<cmd>lua MOVE_SCREEN_UP()<CR>", { silent = true })

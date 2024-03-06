@@ -64,3 +64,6 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.commentstring = "// %s"
   end,
 })
+vim.api.nvim_create_user_command("Toggle", function()
+  vim.cmd("TSBufToggle highlight")
+end, {})
