@@ -22,10 +22,10 @@ mv ~/.local/state/nvim{,.bak}
 mv ~/.cache/nvim{,.bak}
 ```
 
-然后下载 `starter template`
+然后下载本配置
 
 ```shell
-git clone https://github.com/LazyVim/starter ~/.config/nvim
+git clone https://github.com/iku-iku-iku/neovim-config.git ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 ```
 
@@ -64,7 +64,7 @@ sudo install lazygit /usr/local/bin
 
 | key               | desc                     |
 | ----------------- | ------------------------ |
-| <C-s>             | 保存文件!!!!             |
+| `<C-s>`           | 保存文件!!!!             |
 | `<leader><space>` | 全局查找文件!!!!         |
 | `<leader>/`       | 全局搜索文件内容!!!!     |
 | `<leader>,`       | 在打开的buffer中切换!!!! |
@@ -76,7 +76,7 @@ sudo install lazygit /usr/local/bin
 
 | key             | desc                     |
 | --------------- | ------------------------ |
-| <C-w>           | 全局搜索关闭所在的词!!!! |
+| `<C-w>`         | 全局搜索关闭所在的词!!!! |
 | `<leader> + tf` | 打开/关闭 format on save |
 
 > terminal 中的快捷键
@@ -87,10 +87,12 @@ sudo install lazygit /usr/local/bin
 
 ##### 全局工作流
 
-| key          | desc         |
-| ------------ | ------------ |
-| `<leader>qq` | 退出当前会话 |
-| `<leader>ql` | 恢复上次会话 |
+| key          | desc                            |
+| ------------ | ------------------------------- |
+| `<leader>a`  | 将当前所在buffer文件加入harpoon |
+| `<C-q>`      | 打开harpoon                     |
+| `<leader>qq` | 退出当前会话                    |
+| `<leader>ql` | 恢复上次会话                    |
 
 ##### buffer 工作流
 
