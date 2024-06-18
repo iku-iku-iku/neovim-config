@@ -18,39 +18,39 @@ end
 -- vim.cmd("colorscheme tokyonight-night") -- for night themes
 require("onedark").load()
 
-local dap = require("dap")
-EXTENSION_PATH = "/home/code4love/PROGRAM/LINUX/MyLinux-0.11/Linux-0.11/debug/extension"
-dap.adapters.cppdbg = {
-  id = "cppdbg",
-  type = "executable",
-  command = EXTENSION_PATH .. "/debugAdapters/bin/OpenDebugAD7",
-}
-dap.configurations.cpp = {
-  {
-    name = "Launch file",
-    type = "cppdbg",
-    request = "launch",
-    program = function()
-      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-    end,
-    cwd = "${workspaceFolder}",
-    stopAtEntry = true,
-  },
-  {
-    name = "Attach to gdbserver :1234",
-    type = "cppdbg",
-    request = "launch",
-    MIMode = "gdb",
-    miDebuggerServerAddress = "localhost:1234",
-    miDebuggerPath = "/usr/bin/gdb",
-    cwd = "${workspaceFolder}",
-    program = function()
-      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-    end,
-  },
-}
-dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
+-- local dap = require("dap")
+-- EXTENSION_PATH = "/home/code4love/PROGRAM/LINUX/MyLinux-0.11/Linux-0.11/debug/extension"
+-- dap.adapters.cppdbg = {
+--   id = "cppdbg",
+--   type = "executable",
+--   command = EXTENSION_PATH .. "/debugAdapters/bin/OpenDebugAD7",
+-- }
+-- dap.configurations.cpp = {
+--   {
+--     name = "Launch file",
+--     type = "cppdbg",
+--     request = "launch",
+--     program = function()
+--       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+--     end,
+--     cwd = "${workspaceFolder}",
+--     stopAtEntry = true,
+--   },
+--   {
+--     name = "Attach to gdbserver :1234",
+--     type = "cppdbg",
+--     request = "launch",
+--     MIMode = "gdb",
+--     miDebuggerServerAddress = "localhost:1234",
+--     miDebuggerPath = "/usr/bin/gdb",
+--     cwd = "${workspaceFolder}",
+--     program = function()
+--       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+--     end,
+--   },
+-- }
+-- dap.configurations.c = dap.configurations.cpp
+-- dap.configurations.rust = dap.configurations.cpp
 
 require("harpoon").setup({
   menu = {
@@ -67,3 +67,35 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_user_command("Toggle", function()
   vim.cmd("TSBufToggle highlight")
 end, {})
+
+-- require('trouble').setup()
+-- require('lualine').setup {
+--   options = {
+--     icons_enabled = true,
+--     theme = 'auto',
+--     component_separators = { left = '', right = ''},
+--     section_separators = { left = '', right = ''},
+--     disabled_filetypes = {},
+--     always_divide_middle = true,
+--     globalstatus = false,
+--   },
+--   sections = {
+--     lualine_a = {'mode'},
+--     lualine_b = {'branch', 'diff', 'diagnostics'},
+--     lualine_c = {'filename'},
+--     lualine_x = {'encoding', 'fileformat', 'filetype'},
+--     lualine_y = {'progress'},
+--     lualine_z = {'location'}
+--   },
+--   inactive_sections = {
+--     lualine_a = {},
+--     lualine_b = {},
+--     lualine_c = {'filename'},
+--     lualine_x = {'location'},
+--     lualine_y = {},
+--     lualine_z = {}
+--   },
+--   tabline = {},
+--   extensions = {}
+-- }
+--

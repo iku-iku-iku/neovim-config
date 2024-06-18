@@ -64,6 +64,7 @@ sudo install lazygit /usr/local/bin
 
 | key               | desc                     |
 | ----------------- | ------------------------ |
+| <C-s>             | 保存文件!!!!             |
 | `<leader><space>` | 全局查找文件!!!!         |
 | `<leader>/`       | 全局搜索文件内容!!!!     |
 | `<leader>,`       | 在打开的buffer中切换!!!! |
@@ -71,8 +72,17 @@ sudo install lazygit /usr/local/bin
 | `n<C-\>`          | 打开第n个终端!!!         |
 | `<leader>` + \`   | 切换到上一个buffer       |
 
+以下是一些自定义的：
+
+| key             | desc                     |
+| --------------- | ------------------------ |
+| <C-w>           | 全局搜索关闭所在的词!!!! |
+| `<leader> + tf` | 打开/关闭 format on save |
+
 > terminal 中的快捷键
+>
 > `<esc>`: 从 terminal 模式进入 termial 模式
+>
 > `i`: 从 normal 模式进入 terminal 模式
 
 ##### 全局工作流
@@ -93,14 +103,14 @@ sudo install lazygit /usr/local/bin
 
 ##### window 工作流
 
-| key              | desc                                 |
-| ---------------- | ------------------------------------ | ------------ |
-| `<leader>` + '-' | 水平分割窗口                         |
-| `<leader>` + '   | '                                    | 垂直分割窗口 |
-| `<leader>wd`     | 删除当前窗口                         |
-| `C-hjkl`         | 在窗口间切换，方向就是hjkl对应的方向 |
-| `<leader>e`      | toggle 文件树                        |
-| `<leader>be`     | toggle 打开的文件组成的文件树        |
+| key               | desc                                     |
+| ----------------- | ---------------------------------------- |
+| `C-hjkl`          | 在窗口间切换，方向就是hjkl对应的方向!!!! |
+| `<leader>e`       | toggle 文件树!!!                         |
+| `<leader>` + '-'  | 水平分割窗口                             |
+| `<leader>` + '\|' | 垂直分割窗口                             |
+| `<leader>wd`      | 删除当前窗口                             |
+| `<leader>be`      | toggle 打开的文件组成的文件树            |
 
 ##### git 工作流
 
@@ -117,6 +127,8 @@ sudo install lazygit /usr/local/bin
 - q: quit
 
 #### debug
+
+> 不推荐用nvim调试
 
 | key          | desc       |
 | ------------ | ---------- |
