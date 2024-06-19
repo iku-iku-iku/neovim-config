@@ -67,3 +67,10 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_user_command("Toggle", function()
   vim.cmd("TSBufToggle highlight")
 end, {})
+
+-- 设置 tab 宽度为 4 个空格
+vim.o.tabstop = 4        -- 设置一个 tab 等于 4 个空格
+vim.o.shiftwidth = 4     -- 设置自动缩进为 4 个空格
+vim.o.expandtab = true   -- 将 tab 转换为空格
+vim.o.softtabstop = 4    -- 设置按退格键时删除的空格数
+
