@@ -74,3 +74,7 @@ vim.o.shiftwidth = 4     -- 设置自动缩进为 4 个空格
 vim.o.expandtab = true   -- 将 tab 转换为空格
 vim.o.softtabstop = 4    -- 设置按退格键时删除的空格数
 
+require("toggleterm").setup{
+  -- size can be a number or function which is passed the current terminal
+  open_mapping = [[<c-\>]], -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
+}

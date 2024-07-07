@@ -90,3 +90,6 @@ map("n", "<Left>", "<cmd>lua MOVE_SCREEN_UP()<CR>", { silent = true })
 map("n", "<Right>", "<cmd>lua MOVE_SCREEN_DOWN()<CR>", { silent = true })
 
 map("n", "<leader>j", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+
+-- Map jk to Esc in insert mode
+vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
